@@ -1,0 +1,33 @@
+<h1> Create a <i class="em em-new" aria-role="presentation" aria-label="SQUARED NEW"></i> exercise </h1>
+
+<%= form_for @exercise do |f| %> 
+    <%= f.label :name_of_exercise %> 
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :intensity_of_exercise %>  
+    <%= f.text_field :intensity %>
+    <br>
+    <br>
+    <%= f.label :number_of_sets %> 
+    <%= f.number_field :sets %>
+    <br>
+    <br>
+    <%= f.label :reps_per_set %> 
+    <%= f.number_field :reps %>
+    <br>
+    <br>
+    <%= f.collection_select :workout_id, Workout.all, :id, :plan %>
+    <br>
+    <br>
+    <%= f.collection_select :user_id, User.all, :id, :username %>
+    <br>
+    <br>
+    <%= f.submit %>
+    <br>
+    <br>
+    <%= link_to 'Back', user_path(current_user) %>
+<% end %>
+
+<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+

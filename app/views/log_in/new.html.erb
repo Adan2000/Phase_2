@@ -1,0 +1,22 @@
+
+
+<div class="container" id="log_in_form">
+    <h2>Hello! Welcome to FreedomFitness <i class="em em-zap" aria-role="presentation" aria-label="HIGH VOLTAGE SIGN"></i></h2>
+    <%= form_for :log_in , url: log_in_index_path do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <br>
+        <br>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+        <br>
+        <br>
+        <%= f.submit%>
+    <% end %>
+</div>
+<br>
+<br>
+<%= link_to "Sign up here!", new_user_path %>
+
+<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+

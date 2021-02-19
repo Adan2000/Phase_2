@@ -1,0 +1,26 @@
+<h1> List of your exercises </h1>
+<br>
+<%= link_to '<<<', user_path(current_user) %>
+<br>
+<ul>
+    <% @exercises.all.each do |f| %>
+        <br>
+        <li> exercise Name: <%= f.name %></li>
+        <br>
+        <li> exercise Intensity: <%= f.intensity %></li>
+        <br>
+        <li> Sets: <%= f.sets %></li>
+        <br>
+        <li> Reps: <%= f.reps %></li>
+        <br>
+     
+        <%= link_to "EDIT", edit_exercise_path(f) %>
+        <br>
+        <br>
+        <%= button_to "Delete this exercise", f, method: :delete, data: {confirm: "Delete Confirmation"} %>
+        <br>
+        <br>
+    <% end %> 
+</ul>
+
+
